@@ -22,6 +22,15 @@
        font-family: heather;
        src: url(heather.tff);
     }
+
+    @font-face
+    {
+       font-family: laobaosong;
+       src: url(laobaosong.tff);
+    }
+    .line-wrapper {
+      margin: 10vw;
+    }
     .swiper-container {
       width: 100vw;
       height: 90vh;
@@ -34,7 +43,7 @@
       height: 10vh;
       background-color: #e2e3e3;
       font-family:heather;
-      font-size: 4vh;
+      font-size: 3vh;
       text-align:center
     }
 
@@ -44,8 +53,9 @@
 
   </style>
 </head>
-
 <body>
+<embed src="bb.mp3" hidden="true" autostart="true" loop="true">
+<div class="text"></div>
 <div class="swiper-container">
 <div class="swiper-wrapper">
 </div>
@@ -75,7 +85,7 @@
     <script language="javascript">
         function timer() {
           // window.setTimeout("show_date_time()", 1000);
-          var start = new Date(2017,06,11,21,13,14); // 2015.7.2
+          var start = new Date("2017-06-11T21:13:14"); // 2015.7.2
             var t = new Date().getTime() - start;
             var h = ~~(t / 1000 / 60 / 60 % 24);
             if (h < 10) {
@@ -113,24 +123,25 @@
          console.log(flag)
          if (flag) {
           $(".swiper-wrapper").html('<div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/DSC04557.jpg)"></div><div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/1.jpg)"></div><div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/7.jpg)"></div><div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/10.jpg)"></div><div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/11.jpg)"></div><div class="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/15.jpg)"></div><div clss="swiper-slide pc" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/16.jpg)"></div>')
+                var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+              delay: 3000,
+            },
+    });
          }
          if (!flag) {
-          $(".swiper-wrapper").html('<div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG45.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG33.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG34.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG35.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG36.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG38.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG40.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG41.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG42.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG43.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG44.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG46.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG47.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG49.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG50.jpeg?imageMogr2/auto-orient)"></div><div class="swiper-slide phone" style="background-image:url(http://oolk9wrk1.bkt.clouddn.com/WechatIMG51.jpeg?imageMogr2/auto-orient)"></div>')
+          $(".swiper-container").html('<div class=line-wrapper swiper-slide><div class="line">想和你</div><div class="line">一起笑</div><div class="line">一起闹</div><div class="line">一起起床</div><div class="line">一起睡觉</div><div class="line">一起压马路</div><div class="line">一起过地道</div><div class="line">一起天涯海角</div><div class="line">一起豆浆油条</div><div class="line">一起在时间的见证下</div><div class="line"><br /></div><div class="line">白头到老</div></div>')
+          $(".swiper-container").css("font-size", "4vh").css("text-align","left").css("font-family","serif")
          }
      }
     fitScreen()
-    var swiper = new Swiper('.swiper-container', {
-      spaceBetween: 30,
-      effect: 'fade',
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      autoplay: {
-        delay: 3000,
-      },
-    });
      </script>
 
       <!--   <script language="javascript">
